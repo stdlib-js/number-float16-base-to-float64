@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-01-17)
+## Unreleased (2026-01-26)
 
 <section class="features">
 
@@ -34,6 +34,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`b98b7fd`](https://github.com/stdlib-js/stdlib/commit/b98b7fdd51f62e84065397f1d261a125aa62ad23) - **bench:** refactor to use string interpolation in `number/float16/base` [(#9906)](https://github.com/stdlib-js/stdlib/pull/9906) _(by Lokesh Ranjan)_
 -   [`8107f89`](https://github.com/stdlib-js/stdlib/commit/8107f890aa2789811bc8b1e8448dd79f8eb42ab8) - **test:** replace math-assert with float16-assert for `to-float64` [(#9799)](https://github.com/stdlib-js/stdlib/pull/9799) _(by Lokesh Ranjan)_
 -   [`655df20`](https://github.com/stdlib-js/stdlib/commit/655df20c0a380eb3d77264f5969b6b4f496d246f) - **feat:** add `number/float16/base/to-float64` [(#9343)](https://github.com/stdlib-js/stdlib/pull/9343) _(by Gururaj Gurram, stdlib-bot)_
 

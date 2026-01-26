@@ -43,7 +43,7 @@
     "@stdlib/number-float16-base-to-float32": "github:stdlib-js/number-float16-base-to-float32#main",
     "@stdlib/number-float16-ctor": "github:stdlib-js/number-float16-ctor#main",
     "@stdlib/number-float64-base-to-float16": "github:stdlib-js/number-float64-base-to-float16#main",
-    "@stdlib/utils-library-manifest": "^0.2.2"
+    "@stdlib/utils-library-manifest": "^0.2.3"
   },
   "devDependencies": {
     "@stdlib/array-base-map": "github:stdlib-js/array-base-map#main",
@@ -54,6 +54,7 @@
     "@stdlib/number-float16-base-assert-is-nan": "github:stdlib-js/number-float16-base-assert-is-nan#main",
     "@stdlib/number-float16-base-assert-is-negative-zero": "github:stdlib-js/number-float16-base-assert-is-negative-zero#main",
     "@stdlib/random-array-uniform": "^0.2.1",
+    "@stdlib/string-format": "^0.2.2",
     "@stdlib/utils-nary-function": "^0.2.2",
     "@stdlib/utils-pick-arguments": "^0.2.2",
     "@stdlib/utils-try-require": "^0.2.2",
