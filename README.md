@@ -44,6 +44,11 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
+float16ToFloat64 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float16-base-to-float64/tags). For example,
+
+```javascript
 float16ToFloat64 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@v0.1.2-umd/browser.js' )
 ```
 
@@ -56,7 +61,7 @@ var float16ToFloat64 = require( 'path/to/vendor/umd/number-float16-base-to-float
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@v0.1.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -106,7 +111,7 @@ var y = float16ToFloat64( float64ToFloat16( 1.337 ) );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-nary-function@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-pick-arguments@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@v0.1.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
