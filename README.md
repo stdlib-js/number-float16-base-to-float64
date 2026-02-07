@@ -35,19 +35,32 @@ limitations under the License.
 
 > Convert a [half-precision floating-point number][half-precision-floating-point-format] to the nearest [double-precision floating-point number][ieee754].
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/number-float16-base-to-float64
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import float16ToFloat64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@deno/mod.js';
-```
-The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float16-base-to-float64/tags). For example,
-
-```javascript
-import float16ToFloat64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@v0.1.1-deno/mod.js';
+var float16ToFloat64 = require( '@stdlib/number-float16-base-to-float64' );
 ```
 
 #### float16ToFloat64( x )
@@ -55,7 +68,7 @@ import float16ToFloat64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float
 Converts a [half-precision floating-point number][half-precision-floating-point-format] to the nearest [double-precision floating-point number][ieee754].
 
 ```javascript
-import float64ToFloat16 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-float16@deno/mod.js';
+var float64ToFloat16 = require( '@stdlib/number-float64-base-to-float16' );
 
 var y = float16ToFloat64( float64ToFloat16( 1.337 ) );
 // returns 1.3369140625
@@ -78,13 +91,13 @@ var y = float16ToFloat64( float64ToFloat16( 1.337 ) );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import float64ToFloat16 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-float16@deno/mod.js';
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@deno/mod.js';
-import map from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-map@deno/mod.js';
-import naryFunction from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-nary-function@deno/mod.js';
-import pickArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pick-arguments@deno/mod.js';
-import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import float16ToFloat64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-float64@deno/mod.js';
+var float64ToFloat16 = require( '@stdlib/number-float64-base-to-float16' );
+var uniform = require( '@stdlib/random-array-uniform' );
+var map = require( '@stdlib/array-base-map' );
+var naryFunction = require( '@stdlib/utils-nary-function' );
+var pickArguments = require( '@stdlib/utils-pick-arguments' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var float16ToFloat64 = require( '@stdlib/number-float16-base-to-float64' );
 
 // Generate an array of random numbers:
 var f64 = uniform( 100, 0.0, 100.0 );
@@ -102,7 +115,95 @@ logEachMap( 'float64: %f => float16: %f => float64: %f', f64, f16, pickArguments
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/number/float16/base/to_float64.h"
+```
+
+#### stdlib_base_float16_to_float64( x )
+
+Converts a [half-precision floating-point number][half-precision-floating-point-format] to the nearest [double-precision floating-point number][ieee754].
+
+```c
+#include "stdlib/number/float16/ctor.h"
+
+stdlib_float16_t v = stdlib_float16_from_bits( 51648 ); // => -11.5
+double x = stdlib_base_float16_to_float64( v );
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] stdlib_float16_t` half-precision floating-point number.
+
+```c
+double stdlib_base_float16_to_float64( const stdlib_float16_t x );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/number/float16/base/to_float64.h"
+#include "stdlib/number/float16/ctor.h"
+#include <stdint.h>
+#include <stdio.h>
+
+int main( void ) {
+    const stdlib_float16_t x[] = {
+        stdlib_float16_from_bits( 51648 ), // -11.5
+        stdlib_float16_from_bits( 18880 )  // 11.5
+    };
+
+    double v;
+    int i;
+    for ( i = 0; i < 2; i++ ) {
+        v = stdlib_base_float16_to_float64( x[ i ] );
+        printf( "float16 bits: %u => float64: %lf\n", stdlib_float16_to_bits( x[ i ] ), v );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -121,7 +222,7 @@ logEachMap( 'float64: %f => float16: %f => float64: %f', f64, f16, pickArguments
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -151,8 +252,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/number-float16-base-to-float64.svg
 [npm-url]: https://npmjs.org/package/@stdlib/number-float16-base-to-float64
 
-[test-image]: https://github.com/stdlib-js/number-float16-base-to-float64/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/number-float16-base-to-float64/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/number-float16-base-to-float64/actions/workflows/test.yml/badge.svg?branch=v0.1.2
+[test-url]: https://github.com/stdlib-js/number-float16-base-to-float64/actions/workflows/test.yml?query=branch:v0.1.2
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/number-float16-base-to-float64/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/number-float16-base-to-float64?branch=main
